@@ -14,7 +14,8 @@ export const create = async (req, res) => {
         // guardar user
         const savedUser = await userData.save();
 // mostrar user guardado
-        res.status(200).json(savedUser);
+const {password, ...rest } = savedUser;
+        res.status(200).json(rest);
         } catch (error) {
         res.status(500).json({error: "internal server error"});       
         }
@@ -50,7 +51,7 @@ export const update = async(req, res) => {
     });
        res.status(201).json(updateUser);
     } catch (error) {
-        res.status(500).json({error: "internal server error"});
+        res.status(500).json({message: "internal server error", error});
     };
 }
 

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { acceptablePassword } from "../../utils/validators.js";
 
 
 
@@ -50,7 +51,18 @@ const userSchema = new mongoose.Schema({
     registrationDate:{
         type: Date,
         default: Date.now()
-    }
+    },
+    
+    password: {
+        type: String,
+        validate:{
+            validator:function(value){
+                return acceptablePassword(value);
+            },
+            message: "unacceptable password : Debe tener mas de 8 digitos, una letra minuscula, una letra mayuscula y un numero",
+        },
+    },
+
 });
 
 export default mongoose.model("user", userSchema);

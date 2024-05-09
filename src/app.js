@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import { connectDB } from "./db.js";
 import { PORT } from "./config.js";
 import userRoute from "./routes/userRoute.js";
+import productRoute from "./routes/productRoute.js";
 
 //inicializar express para correr server
 const app = express();
@@ -23,6 +24,9 @@ app.get("/", (req, res) => {
 
 //rutas de usuarios
 app.use("/api/user", userRoute);
+
+//rutas de producto
+app.use("/api/product", productRoute);
 
 //iniciar el sv
 app.listen(PORT, () => {
