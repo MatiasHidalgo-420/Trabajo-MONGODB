@@ -4,6 +4,7 @@ import { connectDB } from "./db.js";
 import { PORT } from "./config.js";
 import userRoute from "./routes/userRoute.js";
 import productRoute from "./routes/productRoute.js";
+import categoryRoute from "./routes/categoryRoute.js";
 
 //inicializar express para correr server
 const app = express();
@@ -27,6 +28,9 @@ app.use("/api/user", userRoute);
 
 //rutas de producto
 app.use("/api/product", productRoute);
+
+//rutas de category
+app.use("/api/category", categoryRoute);
 
 //iniciar el sv
 app.listen(PORT, () => {

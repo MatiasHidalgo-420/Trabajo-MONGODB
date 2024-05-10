@@ -2,6 +2,7 @@ import mongoose, { mongo } from "mongoose";
 
 
 
+
 const productSchema = new mongoose.Schema({
     name:{
         type: String,
@@ -22,7 +23,7 @@ const productSchema = new mongoose.Schema({
     description: String,
     quantity: Number,
     
-    category: String,
+    category: {type: mongoose.Schema.Types.ObjectId, ref: "category"},
     destacado: Boolean
 
 });
