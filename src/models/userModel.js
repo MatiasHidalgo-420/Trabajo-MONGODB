@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { acceptablePassword } from "../../utils/validators.js";
+import bcrypt from "bcrypt"
 
 
 
@@ -63,6 +64,11 @@ const userSchema = new mongoose.Schema({
         },
     },
 
+});
+
+userSchema.pre("save", function(next){
+    this.password = bcrypt.hashSync(this.password, 10)
+    next();
 });
 
 export default mongoose.model("user", userSchema);
