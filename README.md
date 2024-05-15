@@ -31,7 +31,7 @@ Este proyecto de backend proporciona una API para gestionar usuarios, productos 
 La API proporciona los siguientes endpoints:
 - Necesario crear usuario y realizar un login para poder gestionar la mayoria de funciones de user,product,category.
 
-### **Endpoints de Usuarios**
+### ✨ **Endpoints de Usuarios**
 
 #### Crear Usuario
 - **Método:** POST
@@ -54,7 +54,7 @@ La API proporciona los siguientes endpoints:
 - **Ruta:** `user/login`
 - ***Proporcionar email y password***
 
-### **Endpoints de Productos**
+### ✨ **Endpoints de Productos**
 
 #### Crear Producto
 - **Método:** POST
@@ -80,7 +80,7 @@ La API proporciona los siguientes endpoints:
 - **Método:** PUT
 - **Ruta:** `product/update/:id`
 
-### **Endpoints de Categorías**
+### ✨ **Endpoints de Categorías**
 
 #### Obtener Todas las Categorías
 - **Método:** GET
